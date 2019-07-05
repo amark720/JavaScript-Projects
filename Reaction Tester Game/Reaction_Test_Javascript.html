@@ -1,0 +1,387 @@
+<!doctype html> 
+<html>
+<head>
+
+     <title>See your reaction time!</title> 
+	 
+	 <meta charset="utf-8" />
+     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<style>
+
+     .background{
+	  background-color:#4A235A;
+	  margin-top:-30px;
+	  height:1000px;
+	  }
+	  
+	 .fixedwidth{
+	  width:1200px;
+	  margin:0 auto;
+	            }
+
+      body{
+	  font-family:Verdana, Geneva, sans-serif;  
+	  margin:0; 
+	  
+          }
+	 
+	 .title{
+      margin:0;
+	  padding: 20px 5px 10px 25px;
+	  margin-left:400px;
+	  margin-top:30px;
+	  color:#00008B;
+	  border-style:solid; 
+	  border-color:white;
+	  border-width: 5px; 
+	  width:320px;
+	  background-color:black; 
+	  position:relative; 
+	  font-size:160%
+	       }
+	  
+	 #titleButton{
+	 margin:0; 
+	 margin:10px 0px 0px 420px;
+
+	 
+	 }
+	   
+	 .clear{
+	 clear:both;
+	       }
+		   
+     .diffVary{
+	 margin:0;
+	 margin: 30px 0px 0px 15px;
+	 border-style:solid;
+	 border-color:black;
+	 font-weight:bold;
+	 color:#8000ff;
+	 width:90px;
+	 height:40px;
+	 padding: 25px 20px 0px 40px;
+	 
+	          }
+			  
+	 .diffVary:hover {
+	 background-color:black;
+	                  }
+			  
+     .timeBox{
+	 margin:0;
+	 margin:15px -50px 30px 30px;
+	 float:right;
+	 border-style:ridge;
+	 width:200px;
+	 height:40px;
+	 padding: 20px 10px 0px 20px;
+	 background-color:#8000ff;
+	 font-weight:bold;
+	 position:relative; 
+	 
+	      }
+		  
+	 .scoreBox{
+	 margin:0;
+	 margin-top:-100px;
+	 float:right;
+	 border-style:ridge;
+	 border-color:yellow;
+	 width:170px;
+	 height:40px;
+	 padding: 20px 10px 0px 20px;
+	 background-color:#8000ff;
+	 font-weight:bold;
+	           }
+     .bestBox{
+	 margin:0;
+	 margin-top:-20px;
+	 float:right;
+	 border-style:ridge;
+	 border-color:yellow;
+	 width:170px;
+	 height:40px;
+	 padding: 20px 10px 0px 20px;
+	 background-color:#8000ff;
+	 font-weight:bold;
+	           }
+		   
+ 	
+			 
+	#tryagain{
+    font-weight:bold; 
+    font-size:300%;
+	width:400px;
+	height:80px;
+    border-radius:5px;
+	border-color:black; 
+	border-style:solid;
+	background-color:lightyellow;
+	color:orangered;
+	text-align:center;
+	padding: 15px 10px 0px 5px;
+	margin: 300px 400px 50px 10px;
+	position:relative;
+	display:none;
+
+	        }	
+				
+	 #Box{
+	 width:200px;
+	 height:200px;
+	 border-style:solid;
+	 position:relative;
+	 display:none; 
+	      }
+			
+	 #border{
+		width:750px;
+        height:500px;
+        border-width: 10px; 
+        border-style:solid;
+        background-color: #CC0000;	
+		margin:-260px 0px 0px 200px;
+	         }
+	 
+	
+		 
+</style> 
+
+</head> 
+	 
+<body>
+
+<div class="background">
+
+<div class="fixedwidth">
+
+     <h1 class="title"> Test Your reactions! </h1>
+	 
+	 <div class="clear"> </div>
+	 
+	  <button id="titleButton"> Please click on button to see the instruction! </button>
+	 
+	 <div class="clear"> </div>
+	 
+	  <p class="timeBox"> Your Time: <span id="time">0</span>s</p>
+	 
+	  <p class="diffVary" id="easy"> EASY </p>
+	
+	  <p class="diffVary" id="medium"> MEDIUM </p>
+	 
+	  <p class="diffVary" id="hard"> HARD </p> 
+	  
+	  <p class="scoreBox"> Score: <span id="score">0</span> points </p>
+    <p class="bestBox"> Best Time: <span id="best">0</span> s </p>
+	  
+
+	 <div class="clear"> </div>
+	 
+	  <div id="border">
+	 
+	  <div id="Box"> </div>
+	  
+	  
+	 <div class="clear"> </div>
+	  
+	
+	  
+	  <p id="tryagain"> Try Again! </p>	
+	
+	 
+	  </div>
+	 
+	  </div> 
+	 
+	 
+</div>
+
+</div>
+
+  <script type="text/javascript">
+  
+   function getRandomColor(){
+   var letters="0123456789ABCDEF".split('');
+   var color="#";
+   for (var i=0; i < 6; i++){
+	   color+=letters[Math.round(Math.random()*15)]; 
+	   
+                            }
+   
+   return color;
+
+   
+							}
+							
+   var makeBoxOut;
+   
+   setTimeout(function() {
+      clearTimeout(makeBoxOut);
+	  document.getElementById("Box").style.display="none";
+	
+	  document.getElementById("tryagain").style.display="block"; 
+	  alert('Game Over');
+  
+   },15000); 
+   
+   var clickedTime; var createdTime; var reactionTime;
+   var score=0; var difficult=1; var point=100; var fault=0; var bestResult1=10; var bestResult2=10; var point=50; var difficult=2; var fault=50; var difficult=3; 
+   
+   function makeBox() {
+	   var time=Math.random();
+	   time=time*2500;
+	   makeBoxOut = setTimeout(function() {
+		   
+		   if (Math.random()>0.5) {
+	   document.getElementById("Box").style.borderRadius="100px";
+	   
+		   }  else{
+			   
+	   document.getElementById("Box").style.borderRadius="0"; 
+			   
+		          }
+							 
+		var top=Math.random();
+		top=top*300;
+		var left=Math.random();
+		left=left*500; 
+		
+		document.getElementById("Box").style.top=top+"px";
+		
+		document.getElementById("Box").style.left=left+"px";
+		
+		document.getElementById("Box").style.backgroundColor=getRandomColor();
+		
+		document.getElementById("Box").style.display="block";
+		
+		createdTime=Date.now();
+		
+	                         },time);
+							 
+                     }
+		
+		document.getElementById("Box").onclick=function(){
+			
+		clickedTime=Date.now(); 	
+		
+        reactionTime=(clickedTime-createdTime) / 1000;
+		
+		document.getElementById("time").innerHTML=reactionTime;
+		
+		this.style.display="none"; 
+		
+		makeBox();
+		
+		bestResult1=reactionTime; 
+		
+		if (bestResult2 > bestResult1) {
+			bestResult2=bestResult1;
+            	 document.getElementById("best").innerHTML=bestResult2;
+									   } 
+		
+		if ((difficult==1 && reactionTime>4) || (difficult==2 && (reactionTime > 2 && reactionTime <3))) {
+		    score=score;
+			
+																									     }
+		
+		else if (difficult==2 && reactionTime> 3) {
+			score=score - fault;
+			 
+			                                      }
+ 		
+		
+		else if(difficult==3 && reactionTime > 1) {
+			score=score - fault;
+                                                    			
+		                                          }
+												  
+		else{
+			score =score + point;
+			
+		    }
+			
+	    document.getElementById("score").innerHTML=score; 
+	
+		if (score===0) {
+		   
+
+          
+			
+			document.getElementById("tryagain").style.display="block"; 
+			
+			document.getElementById("Box").style.display="none"; 
+			
+			document.getElementById("border").style.display="none";
+			
+			
+			
+		}
+												  
+		                                                    }
+															
+		document.getElementById("easy").onclick=function() {
+			
+			point=100;
+			difficult=1;
+			fault=0;
+			
+			document.getElementById("easy").style.backgroundColor="orange";
+			
+			document.getElementById("medium").style.backgroundColor="red";
+			
+			document.getElementById("hard").style.backgroundColor="red";
+			
+		                                                    } ;			
+
+        document.getElementById("medium").onclick=function() {
+			
+	        point=100;
+			difficult=2;
+			fault=50; 
+			
+			document.getElementById("easy").style.backgroundColor="red";
+			
+			document.getElementById("medium").style.backgroundColor="orange";
+			
+			document.getElementById("hard").style.backgroundColor="red";
+		
+			
+		                                                     } ;		
+
+        document.getElementById("hard").onclick=function() {	
+
+            point=50;
+            difficult=3;
+            fault=50;			
+			
+			document.getElementById("easy").style.backgroundColor="red";
+			
+			document.getElementById("medium").style.backgroundColor="red";
+			
+			document.getElementById("hard").style.backgroundColor="orange";
+			
+		                                                     } ;
+	    makeBox();
+			 
+		
+     document.getElementById("titleButton").onclick=function(){
+		 
+	     alert("Click on the circle or square created as fast as you can! Difficulties are varied.")
+		 
+	 }
+	 
+	 document.getElementById("tryagain").onclick=function() {
+		  
+		  location.reload();
+		 
+	 };
+	  
+
+
+  </script>
+
+</body>
+</html>  

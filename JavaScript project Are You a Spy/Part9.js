@@ -45,8 +45,10 @@ if (petName[petName.length-1] === "y"){
 // Check all four conditions
 if (nameCond && ageCond && heightCond && petCond){
   // My secret message
+  alert("Welcome Comrade! You've passed the Spy Test! You are a Real Spy!");
   console.log("Welcome Comrade! You've passed the Spy Test")
 }else{
+  alert("Sorry, nothing to see here as you've failed the spy test.");
   console.log("Sorry, nothing to see here as you've failed the spy test.")
 }
 }

@@ -6,4 +6,6 @@
 
 <img src="https://github.com/amark720/JavaScript-Projects/blob/master/Screenshot.jpg" alt="Landing Page" height="70%" width="80%">
 
-#### Feel Free to contact me at➛ amark720@gmail.com for any help related to Projects in this Repository!
+### Don't forget to ⭐ the repository, if it helped you in anyway.
+
+#### Feel Free to contact me at➛ databoyamar@gmail.com for any help related to Projects in this Repository!
